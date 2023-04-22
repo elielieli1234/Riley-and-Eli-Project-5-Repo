@@ -1,0 +1,17 @@
+﻿https://github.com/elielieli1234/Riley-and-Eli-Project-5-Repo/blob/main/writeup.txt 
+
+
+We worked together on all parts but I more so implemented the input and building the graph, 
+i.e. the constructors/destructors, addword/adddice, dumpnode… And Riley did the bulk of the work on BFS(), canIspell, and print_node_order. 
+
+
+The time complexity has some overhead in terms of building the graph, 
+which would grow in O(|V| + |E|) time, but the actual algorithm’s time complexity is dominated by canIspell(). 
+We use an adjacency list to represent the graph, where we have a vector of nodes that point to each other through edge objects. 
+In each iteration of canIspell, we call BFS to find a new augmenting path, then traceback to modify flow weighting. 
+We do this until there is no direction with net flow to take from the source, i.e. no more augmenting paths. 
+We then traceback from each letter to tell us which dice should be used on each letter, and get the order in which to spell the word. 
+If the number of dice we traced back to is less than the number of letters necessary to spell the word, we can’t spell the word.
+
+
+So our time complexity is worst case O(|V||E^2|), but on average it should do better than a DFS algorithm that could feasibly take the longest possible path to the sink node.
