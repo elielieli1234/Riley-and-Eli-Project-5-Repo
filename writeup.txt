@@ -1,0 +1,10 @@
+Riley Taylor and Eli Dayney - Project 5
+
+Contribution:
+	I helped setup the constructors for Graph, Edge, and Node class. I also finished BFS and canISpell and got them working.
+	I also did some debugging.
+
+Time Complexity:
+	Our code uses nested for loops for going through the node adjacency list, which would have a time complexity of O(n^2).
+	We also use Edmund-Karp's algorithm which is O(V*E^2), where v is number of vertices and e is number of edges. So
+	Our code's time complexity will vary depending on the number of vertices and edges in the graph.
